@@ -7,7 +7,7 @@ Simple docker-compose workflow for Symfony development.
 
 To get started, make sure you have [Docker](https://docs.docker.com/) installed on your system, and then clone this repository.
 
-First add your entire Symfony project to the `src` folder, then open a terminal and from this cloned respository's root run `docker-compose up -d --build`. Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your Laravel app running as intended. **Your Symfony app needs to be in the src directory first before bringing the containers up.** 
+First add your entire Symfony project to the `src` folder, then open a terminal and from this cloned respository's root run `docker-compose up -d --build`. Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your Symfony app running as intended. **Your Symfony app needs to be in the src directory first before bringing the containers up.** 
 
 Composer and NPM containers commands
 
@@ -33,6 +33,10 @@ By default, whenever you bring down the docker-compose network, your MySQL data 
 volumes:
   - ./mysql:/var/lib/mysql
 ```
+
+## PhpMyAdmnin
+
+Open up your browser of choice to [http://localhost:8081](http://localhost:8081) and you should see your Phpmyadmin running as intended. 
 
 
 ## Symfony 
