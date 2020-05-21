@@ -1,6 +1,6 @@
 # docker-compose-symfony
 
-Simple docker-compose workflow for Symfony development.
+Simple docker-compose workflow for Symfony development. 
 
 
 ## Usage
@@ -53,4 +53,4 @@ Symfony Console command
 
 ## Credits
 
-Inspired from [here](https://github.com/aschmelyun/docker-compose-laravel)
+Inspired from [aschmelyun](https://github.com/aschmelyun) [docker-compose-laravel](https://github.com/aschmelyun/docker-compose-laravel) repository.
