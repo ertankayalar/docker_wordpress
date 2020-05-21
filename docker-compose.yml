@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-  laravel:
+  symfony:
 
 services:
   nginx:
@@ -16,7 +16,7 @@ services:
       - php
       - mysql
     networks:
-      - laravel
+      - symfony
 
   mysql:
     image: mysql:5.7.29
@@ -26,14 +26,14 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: kurier
-      MYSQL_USER: kurier
+      MYSQL_DATABASE: symfonydb
+      MYSQL_USER: symfony
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
-      - laravel
+      - symfony
 
   php:
     build:
@@ -45,7 +45,7 @@ services:
     ports:
       - "9000:9000"
     networks:
-      - laravel
+      - symfony
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -59,7 +59,7 @@ services:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: secret
     networks: 
-      - laravel
+      - symfony
 
   composer:
     image: composer:latest
@@ -70,7 +70,7 @@ services:
     depends_on:
       - php
     networks:
-      - laravel
+      - symfony
 
   npm:
     image: node:13.7
