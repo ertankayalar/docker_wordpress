@@ -22,7 +22,6 @@ Containers created and their ports (if used) are as follows:
 - **php** - `:9000`
 - **npm**
 - **composer**
-- **artisan**
 
 ## Persistent MySQL Storage
 
@@ -43,7 +42,6 @@ Symfony Console command
 
 ``` 
     docker-compose run php bin/console
-
 ```
 
 
@@ -53,4 +51,4 @@ GD Extension
 
 ### Credits
 
-Inspired from  [aschmelyun](https://github.com/aschmelyun/docker-compose-laravel)
+Inspired from [here](https://github.com/aschmelyun/docker-compose-laravel)
