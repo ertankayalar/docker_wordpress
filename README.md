@@ -37,6 +37,20 @@ volumes:
 ```
 
 
+## Symfony 
+
+Symfony Console command
+
+``` 
+    docker-compose run php bin/console
+
+```
+
+
+GD Extension
+
+(https://stackoverflow.com/questions/42087734/install-php7-gd-in-alpine)
+
 ### Credits
 
 Inspired from  [aschmelyun](https://github.com/aschmelyun/docker-compose-laravel)
