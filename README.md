@@ -7,13 +7,12 @@ Simple docker-compose workflow for Symfony development.
 
 To get started, make sure you have [Docker](https://docs.docker.com/) installed on your system, and then clone this repository.
 
-First add your entire Laravel project to the `src` folder, then open a terminal and from this cloned respository's root run `docker-compose up -d --build`. Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your Laravel app running as intended. **Your Laravel app needs to be in the src directory first before bringing the containers up, otherwise the artisan container will not build, as it's missing the appropriate file.** 
+First add your entire Symfony project to the `src` folder, then open a terminal and from this cloned respository's root run `docker-compose up -d --build`. Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your Laravel app running as intended. **Your Symfony app needs to be in the src directory first before bringing the containers up.** 
 
-**New:** Three new containers have been added that handle Composer, NPM, and Artisan commands without having to have these platforms installed on your local computer. Use the following command templates from your project root, modifiying them to fit your particular use case:
+Composer and NPM containers commands
 
 - `docker-compose run --rm composer update`
 - `docker-compose run --rm npm run dev`
-- `docker-compose run --rm artisan migrate` 
 
 Containers created and their ports (if used) are as follows:
 
@@ -40,15 +39,13 @@ volumes:
 
 Symfony Console command
 
-``` 
-    docker-compose run php bin/console
-```
+- `docker-compose run php bin/console`
 
 
-GD Extension
+### GD Extension
 
 (https://stackoverflow.com/questions/42087734/install-php7-gd-in-alpine)
 
-### Credits
+## Credits
 
 Inspired from [here](https://github.com/aschmelyun/docker-compose-laravel)
