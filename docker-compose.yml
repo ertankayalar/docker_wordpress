@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-  symfony:
+  wp_static:
 
 services:
   nginx:
@@ -16,7 +16,7 @@ services:
       - php
       - mysql
     networks:
-      - symfony
+      - wp_static
 
   mysql:
     image: mysql:5.7.29
@@ -26,14 +26,14 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: symfonydb
-      MYSQL_USER: symfony
+      MYSQL_DATABASE: wpdb
+      MYSQL_USER: wpuser
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
-      - symfony
+      - wp_static
 
   php:
     build:
@@ -45,7 +45,7 @@ services:
     ports:
       - "9000:9000"
     networks:
-      - symfony
+      - wp_static
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -59,7 +59,7 @@ services:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: secret
     networks: 
-      - symfony
+      - wp_static
 
   composer:
     image: composer:latest
@@ -70,12 +70,6 @@ services:
     depends_on:
       - php
     networks:
-      - symfony
+      - wp_static
 
-  npm:
-    image: node:13.7
-    container_name: npm
-    volumes:
-      - ./src:/var/www/html
-    working_dir: /var/www/html
-    entrypoint: ['npm']
+
