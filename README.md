@@ -1,13 +1,13 @@
-# docker-compose-symfony
+# docker wordpress
 
-Simple docker-compose workflow for Symfony development. 
+Simple docker-compose workflow for WordPress development. 
 
 
 ## Usage
 
 To get started, make sure you have [Docker](https://docs.docker.com/) installed on your system, and then clone this repository.
 
-First add your entire Symfony project to the `src` folder, then open a terminal and from this cloned respository's root run `docker-compose up -d --build`. Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your Symfony app running as intended. **Your Symfony app needs to be in the src directory first before bringing the containers up.** 
+First add your entire WordPress project to the `src` folder, then open a terminal and from this cloned respository's root run `docker-compose up -d --build`. Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your WordPress app running as intended. **Your WordPress app needs to be in the src directory first before bringing the containers up.** 
 
 Composer and NPM containers commands
 
@@ -20,7 +20,6 @@ Containers created and their ports (if used) are as follows:
 - **mysql** - `:3306`
 - **php** - `:9000`
 - **phpmyadmin** - `:8081`
-- **npm**
 - **composer**
 
 ## Persistent MySQL Storage
@@ -39,12 +38,6 @@ volumes:
 
 Open up your browser of choice to [http://localhost:8081](http://localhost:8081) and you should see your Phpmyadmin running as intended. 
 
-
-## Symfony 
-
-Symfony Console command
-
-- `docker-compose run php bin/console`
 
 
 ### GD Extension
