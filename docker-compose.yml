@@ -58,6 +58,7 @@ services:
     environment: 
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: secret
+      UPLOAD_LIMIT: 32M
     networks: 
       - wp_static
 
